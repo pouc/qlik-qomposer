@@ -1,0 +1,19 @@
+{
+  "name": "qomposer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "connect-multiparty": "^1.2.5",
+    "cors": "^2.7.1",
+    "express": "^4.13.0",
+    "http-proxy": "^1.11.1",
+    "shortid": "^2.2.2"
+  }
+}

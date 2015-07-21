@@ -1,0 +1,126 @@
+﻿{
+	"langs.fr.fr": "Français",
+	"langs.en.us": "Anglais",
+	
+	"default.hub.header.title": "Qomposer",
+	"default.hub.header.description": "Cet éditeur de vous permet de vous qomposer des pages contenant des objets Qlik Sense! :)",
+	"default.hub.header.link": "En savoir plus",
+	"default.hub.header.link.href": "http://www.qlik.com",
+	
+	"default.mashup.name": "Nouveau Mashup",
+	
+	"default.page.header.title": "Nouvelle page",
+	"default.page.header.description": "Vous  pouvez éditer cette page pour ajouter vos propres objets",
+	"default.page.header.link": "En savoir plus",
+	"default.page.header.link.href": "http://www.qlik.com",
+	
+	"default.panel.title": "Nouvel objet!",
+	"default.panel.text": "Cet objet est vide",
+
+	"navbar.toggle": "Navigation",
+	
+	"navbar.multiple.clear": "Déselectionner",
+	"navbar.multiple.configure": "Configurer",
+	"navbar.multiple.delete": "Supprimer",
+	
+	"navbar.edit.edit": "Editer",
+	"navbar.edit.share": "Partager",
+	"navbar.edit.mail": "E-mail",
+	"navbar.edit.min": "Minimiser",
+	"navbar.edit.app": "Editer l'app",
+	"navbar.edit.done": "Terminer",
+	"navbar.edit.save": "Sauvegarder",
+	"navbar.edit.page": "Config",
+	"navbar.edit.mashup": "Config",
+	"navbar.edit.publish": "Publier",
+	"navbar.edit.unpublish": "Dépublier",
+	
+	"chat.title": "Commenter !",
+	"chat.write": "Votre message ...",
+	"chat.send": "Envoyer",
+	
+	"mail.sent.success": "E-mail envoyé!",
+	
+	"route.hub.body.publishedBy": "par",
+	"route.hub.body.newMashup": "Ajouter",
+	"route.main.body.newPanel": "Ajouter",
+	
+	"footer.left": "2015 Entreprise X",
+	"footer.left.href": "http://www.qlik.com",
+	"footer.right": "Page principale",
+	"footer.right.href": "#",
+	
+	"modal.config.mashup.title": "Config Mashup!",
+	"modal.config.page.title": "Configuration de la page",
+	"modal.config.hub.title": "Configuration du Hub",
+	"modal.config.panel.title": "Configurer le widget",
+	"modal.config.delete.title": "Supprimer ?",
+	
+	"route.mashups.body.newMashup": "Ajouter",
+
+	"modal.config.accordion.general": "Général",
+	"modal.config.accordion.general.name": "Nom",
+	"modal.config.accordion.general.title": "Identifiant",
+	"modal.config.accordion.general.logo": "Logo", 
+	"modal.config.accordion.general.color": "Couleur",
+	"modal.config.accordion.general.theme": "Thème",
+	"modal.config.accordion.general.application": "Application",
+	
+	"modal.config.accordion.navigation": "Barre de navigation",
+	"modal.config.accordion.navigation.invert": "Inverser les couleurs",
+	"modal.config.accordion.navigation.sep": "----- Séparateur -----",
+	"modal.config.accordion.navigation.empty": "[Vide]",
+	"modal.config.accordion.navigation.page": "Numéro de page",
+	"modal.config.accordion.navigation.title": "Page",
+	"modal.config.accordion.navigation.brand": "Marque",
+	"modal.config.accordion.navigation.logo": "Logo", 
+	"modal.config.accordion.navigation.nav": "Navigation",
+	"modal.config.accordion.navigation.addPage": "Ajouter une page ...",
+	
+	"modal.config.accordion.header": "En-tête",
+	"modal.config.accordion.header.header": "En-tête",
+	"modal.config.accordion.header.invert": "Inverser les couleurs",
+	"modal.config.accordion.header.logo": "Logo", 
+	"modal.config.accordion.header.description": "Description de l'en-tête",
+	"modal.config.accordion.header.link": "Lien",
+	"modal.config.accordion.header.link.show": "Montrer lien",
+	"modal.config.accordion.header.link.href": "Adresse du lien",
+	
+	"modal.config.accordion.footer": "Pied de page",
+	"modal.config.accordion.footer.left": "Gauche",
+	"modal.config.accordion.footer.right": "Droite",
+	
+	"modal.config.accordion.panel.title": "Titre",
+	"modal.config.accordion.panel.icon": "Icône",
+	"modal.config.accordion.panel.link": "Lien",
+	"modal.config.accordion.panel.title.show": "Montrer le titre",
+	
+	"modal.config.accordion.panel.color": "Couleur",
+	"modal.config.accordion.panel.color.default": "Défaut",
+	"modal.config.accordion.panel.color.primary": "Primaire",
+	"modal.config.accordion.panel.color.success": "Succès",
+	"modal.config.accordion.panel.color.info": "Info",
+	"modal.config.accordion.panel.color.warning": "Attention",
+	"modal.config.accordion.panel.color.danger": "Danger",
+	
+	"modal.config.accordion.panel.text": "Texte",
+	"modal.config.accordion.panel.width": "Largeur",
+	"modal.config.accordion.panel.height": "Hauteur",
+	"modal.config.accordion.panel.application": "Application",
+	"modal.config.accordion.panel.object": "Objet",
+
+	"modal.delete.body": "Etes vous sûr de vouloir supprimer ce(s) élément(s) ?",
+	
+	"modal.ok": "Valider!",
+	"modal.cancel": "Annuler",
+	
+	"notif.saved.ok": "Sauvegardé avec succès!",
+	"notif.panel.removed": "Elément supprimé avec succès!",
+	
+	"notif.repo.remote.loaded": "Chargement depuis la sauvegarde distante",
+	"notif.repo.local.loaded": "Chargement depuis la sauvegarde locale",
+	"notif.repo.local.created": "Création d'une sauvegarde locale",
+	
+	"notif.error.mashup.noApp": "Vous devez associer une application à ce mashup!"
+	
+}

@@ -1,0 +1,27 @@
+{
+  "name": "store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "deep-diff": "^0.3.2",
+    "extend": "^2.0.1",
+    "fs": "0.0.2",
+    "promise": "^7.0.3",
+    "regex": "^0.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "chai-as-promised": "^5.1.0",
+    "mocha": "^2.2.5",
+    "promise": "^7.0.3",
+    "rimraf": "^2.4.1",
+    "sinon": "^1.15.4"
+  }
+}

@@ -1,0 +1,96 @@
+
+.qvt-range-selection .axis-cover {
+  background-color: rgba(82, 204, 82, 0.6);
+}
+.qvt-range-selection .axis-cover.active,
+.qvt-range-selection .axis-cover:hover {
+  background-color: rgba(82, 204, 82, 0.8);
+}
+.qvt-range-selection .bubble {
+  background-color: #333333;
+  border-color: rgba(153, 153, 153, 0.2);
+}
+.qvt-range-selection .bubble.active,
+.qvt-range-selection .bubble:hover {
+  border-color: #cccccc;
+}
+.qvt-range-selection .range-vertical .near-edge,
+.qvt-range-selection .range-horizontal .near-edge,
+.qvt-range-selection .range-vertical .far-edge,
+.qvt-range-selection .range-horizontal .far-edge {
+  border-color: rgba(153, 153, 153, 0.2);
+}
+.qvt-range-selection .range-vertical .near-edge.active,
+.qvt-range-selection .range-horizontal .near-edge.active,
+.qvt-range-selection .range-vertical .far-edge.active,
+.qvt-range-selection .range-horizontal .far-edge.active,
+.qvt-range-selection .range-vertical .near-edge:hover,
+.qvt-range-selection .range-horizontal .near-edge:hover,
+.qvt-range-selection .range-vertical .far-edge:hover,
+.qvt-range-selection .range-horizontal .far-edge:hover {
+  border-color: #cccccc;
+}
+#grid .qv-gridcell .qv-gridcell-nav > a.white {
+  background-color: #333333;
+}
+#grid .qv-gridcell .qv-gridcell-nav > a:hover {
+  color: #a6a6a6;
+}
+#grid .qv-gridcell .qv-gridcell-nav > a.border {
+  border-color: #b3b3b3;
+}
+#grid .qv-gridcell .qv-gridcell-nav > a.border:hover {
+  border-color: #a6a6a6;
+}
+.qvt-gridcell.zoom {
+  background-color: #333333;
+}
+.qvt-gridcell .zoomBorder {
+  background-color: #333333;
+  border: 2px solid #4d4d4d;
+}
+.qvt-selection-toolbar {
+  background-color: #333333;
+}
+.qvt-selection-toolbar.sel-toolbar-click-to-unlock-bg {
+  background-color: #8c8c8c;
+}
+.qvt-sheet {
+  background-color: #333333;
+  color: #e6e6e6;
+}
+.qvt-sheet-expand-button {
+  color: #e6e6e6;
+  background-color: #333333;
+}
+.qvt-visualization-title {
+  color: #e6e6e6;
+}
+.qv-object-listbox .qvt-visualization-title {
+  color: #e6e6e6;
+}
+.qv-collapsed-listbox .title {
+  color: #e6e6e6;
+}
+.qvt-visualization-subtitle {
+  color: #d9d9d9;
+}
+.qvt-visualization-footnote {
+  color: #d9d9d9;
+}
+.qvt-visualization-axis-breadcrumb .crumb-item {
+  color: #e6e6e6;
+}
+.qvt-visualization-axis-breadcrumb .crumb-item .crumb-button {
+  color: #a6a6a6;
+}
+.qvt-visualization-axis-breadcrumb .crumb-item .crumb-button:hover {
+  color: #e6e6e6;
+}
+.qvt-chart-tooltip {
+  background-color: #e6e6e6;
+  color: #333333;
+}
+.qvt-chart-tooltip .immidiate-contextual-arrow {
+  border-bottom: 10px solid #e6e6e6;
+}

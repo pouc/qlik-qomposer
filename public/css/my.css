@@ -1,0 +1,166 @@
+.qv-object-header { display: none; }
+		
+.qv-global-search { position: static; }
+.qv-search-input { height: 50px; }
+
+.qvt-range-selection .bubble {
+	max-height: initial !important;
+}
+
+.sel-toolbar-btn {
+	line-height: 1.1 !important;
+}
+
+.inverted {
+	color: #fff !important;
+	text-shadow: -1px 0 #444, 0 1px #444, 1px 0 #444, 0 -1px #444 !important;
+}
+
+.drop-box {
+	background: #F8F8F8;
+	border: 5px dashed #DDD;
+	width: 100%;
+	height: 65px;
+	text-align: center;
+	padding: 15px;
+}
+
+.image-box {
+	height: 65px;
+}
+
+
+.dragover {
+	border: 5px dashed blue;
+}
+
+
+.mainview-animation.ng-enter {
+  -webkit-transition: 0.2s linear all; 
+  -moz-transition: 0.2s linear all; 
+  -o-transition: 0.2s linear all; 
+  transition: 0.2s linear all; 
+}
+
+.mainview-animation.ng-enter{
+  opacity: 0.5;
+}
+
+.mainview-animation.ng-enter.ng-enter-active { 
+  opacity: 1;
+}
+
+.mainview-animation.ng-leave{
+  opacity: 0.5;
+}
+
+.mainview-animation.ng-leave.ng-leave-active { 
+  opacity: 1;
+}
+
+
+.hub-color-blue {
+  color: #fff !important;
+  background-color: #2e8bcc !important;
+}
+.hub-color-green {
+  color: #fff !important;
+  background-color: #339933 !important;
+}
+.hub-color-red {
+  color: #fff !important;
+  background-color: #e51400 !important;
+}
+.hub-color-yellow {
+  color: #fff !important;
+  background-color: #ffc40d !important;
+}
+.hub-color-orange {
+  color: #fff !important;
+  background-color: #f39c12 !important;
+}
+.hub-color-pink {
+  color: #fff !important;
+  background-color: #e671b8 !important;
+}
+.hub-color-purple {
+  color: #fff !important;
+  background-color: #7b4f9d !important;
+}
+.hub-color-lime {
+  color: #fff !important;
+  background-color: #8cbf26 !important;
+}
+.hub-color-magenta {
+  color: #fff !important;
+  background-color: #ff0097 !important;
+}
+.hub-color-teal {
+  color: #fff !important;
+  background-color: #00aba9 !important;
+}
+.hub-color-turquoise {
+  color: #fff !important;
+  background-color: #1abc9c !important;
+}
+.hub-color-green-sea {
+  color: #fff !important;
+  background-color: #16a085 !important;
+}
+.hub-color-emerald {
+  color: #fff !important;
+  background-color: #2ecc71 !important;
+}
+.hub-color-nephritis {
+  color: #fff !important;
+  background-color: #27ae60 !important;
+}
+.hub-color-peter-river {
+  color: #fff !important;
+  background-color: #3498db !important;
+}
+.hub-color-belize-hole {
+  color: #fff !important;
+  background-color: #2980b9 !important;
+}
+.hub-color-amethyst {
+  color: #fff !important;
+  background-color: #9b59b6 !important;
+}
+.hub-color-wisteria {
+  color: #fff !important;
+  background-color: #8e44ad !important;
+}
+.hub-color-wet-asphalt {
+  color: #fff !important;
+  background-color: #34495e !important;
+}
+.hub-color-midnight-blue {
+  color: #fff !important;
+  background-color: #2c3e50 !important;
+}
+.hub-color-sun-flower {
+  color: #fff !important;
+  background-color: #f1c40f !important;
+}
+.hub-color-carrot {
+  color: #fff !important;
+  background-color: #e67e22 !important;
+}
+.hub-color-pumpkin {
+  color: #fff !important;
+  background-color: #d35400 !important;
+}
+.hub-color-alizarin {
+  color: #fff !important;
+  background-color: #e74c3c !important;
+}
+.hub-color-pomegranate {
+  color: #fff !important;
+  background-color: #c0392b !important;
+}
+.hub-color-clouds {
+  background-color: #ecf0f1 !important;
+  color: #34495e !important;
+}
+

@@ -1,0 +1,123 @@
+﻿{
+	"langs.fr.fr": "French",
+	"langs.en.us": "English",
+	
+	"default.hub.header.title": "Qomposer",
+	"default.hub.header.description": "This editor enables you to qompose pages with Qlik Sense objects. Enjoy! ;)",
+	"default.hub.header.link": "Learn more",
+	"default.hub.header.link.href": "http://www.qlik.com",
+	
+	"default.mashup.name": "New Mashup",
+	
+	"default.page.header.title": "New page",
+	"default.page.header.description": "Edit this page to add your own objects",
+	"default.page.header.link": "Learn more",
+	"default.page.header.link.href": "http://www.qlik.com",
+	
+	"default.panel.title": "New object!",
+	"default.panel.text": "This item is empty!",
+
+	"navbar.toggle": "Toggle navigation",
+	
+	"navbar.multiple.clear": "Clear",
+	"navbar.multiple.configure": "Configure",
+	"navbar.multiple.delete": "Delete",
+	
+	"navbar.edit.edit": "Edit",
+	"navbar.edit.share": "Share",
+	"navbar.edit.mail": "Mail",
+	"navbar.edit.min": "Minimize",
+	"navbar.edit.app": "Edit App",
+	"navbar.edit.done": "Done",
+	"navbar.edit.save": "Save",
+	"navbar.edit.page": "Config",
+	"navbar.edit.mashup": "Config",
+	"navbar.edit.publish": "Publish",
+	"navbar.edit.unpublish": "Unpublish",
+	
+	"chat.title": "Comment!",
+	"chat.write": "Write something here...",
+	"chat.send": "Send",
+	
+	"mail.sent.success": "Mail sent!",
+	
+	"route.hub.body.publishedBy": "by",
+	"route.hub.body.newMashup": "New!",
+	"route.main.body.newPanel": "Add item",
+	
+	"footer.left": "2015 Company, Inc.",
+	"footer.left.href": "http://www.qlik.com",
+	"footer.right": "Back to main",
+	"footer.right.href": "#",
+
+	"modal.config.mashup.title": "Config Mashup!",
+	"modal.config.page.title": "Config page!",
+	"modal.config.hub.title": "Config Hub!",
+	"modal.config.panel.title": "Config Widget!",
+	"modal.config.delete.title": "Delete?",
+	
+	"modal.config.accordion.general": "General",
+	"modal.config.accordion.general.name": "Name",
+	"modal.config.accordion.general.title": "Id",
+	"modal.config.accordion.general.logo": "Logo", 
+	"modal.config.accordion.general.color": "Color",
+	"modal.config.accordion.general.theme": "Theme",
+	"modal.config.accordion.general.application": "Application",
+	
+	"modal.config.accordion.navigation": "Navigation bar",
+	"modal.config.accordion.navigation.invert": "Invert",
+	"modal.config.accordion.navigation.sep": "----- Separator -----",
+	"modal.config.accordion.navigation.empty": "[Empty]",
+	"modal.config.accordion.navigation.page": "Page Number",
+	"modal.config.accordion.navigation.title": "Page name",
+	"modal.config.accordion.navigation.brand": "Brand",
+	"modal.config.accordion.navigation.logo": "Logo", 
+	"modal.config.accordion.navigation.nav": "Navigation",
+	"modal.config.accordion.navigation.addPage": "Add page ...",
+	
+	"modal.config.accordion.header": "Header",
+	"modal.config.accordion.header.header": "Header",
+	"modal.config.accordion.header.invert": "Invert",
+	"modal.config.accordion.header.logo": "Logo", 
+	"modal.config.accordion.header.description": "Description",
+	"modal.config.accordion.header.link": "Link",
+	"modal.config.accordion.header.link.show": "Show Link",
+	"modal.config.accordion.header.link.href": "Link address",
+	
+	"modal.config.accordion.footer": "Footer",
+	"modal.config.accordion.footer.left": "Left",
+	"modal.config.accordion.footer.right": "Right",
+	
+	"modal.config.accordion.panel.title": "Title",
+	"modal.config.accordion.panel.icon": "Icon",
+	"modal.config.accordion.panel.link": "Link",
+	"modal.config.accordion.panel.color": "Color",
+	
+	"modal.config.accordion.panel.color.default": "Default",
+	"modal.config.accordion.panel.color.primary": "Primary",
+	"modal.config.accordion.panel.color.success": "Success",
+	"modal.config.accordion.panel.color.info": "Info",
+	"modal.config.accordion.panel.color.warning": "Warning",
+	"modal.config.accordion.panel.color.danger": "Danger",
+	
+	"modal.config.accordion.panel.text": "Text",
+	"modal.config.accordion.panel.width": "Width",
+	"modal.config.accordion.panel.height": "Height",
+	"modal.config.accordion.panel.application": "Application",
+	"modal.config.accordion.panel.object": "Object",
+
+	"modal.delete.body": "Are you sure you want to delete this element ?",
+	
+	"modal.ok": "OK!",
+	"modal.cancel": "Cancel",
+	
+	"notif.saved.ok": "Saved successfully!",
+	"notif.panel.removed": "Panel removed successfully!",
+	
+	"notif.repo.remote.loaded": "Remote repo loaded!",
+	"notif.repo.local.loaded": "Using local repo!",
+	"notif.repo.local.created": "Creating local repo!",
+	
+	"notif.error.mashup.noApp": "Please associate an app to this mashup before adding objects!"
+	
+}

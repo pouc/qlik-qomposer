@@ -1,0 +1,113 @@
+<nav ng-show="state.ready" class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+				<span trans="'navbar.toggle'" class="sr-only"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+
+		<div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+			<ul class="nav navbar-nav navbar-right">
+				<li style="padding-right: 15px;">
+					<div class="btn-group">
+						<button ng-if="state.edit" type="button" class="btn btn-default navbar-btn" ng-click="configHub()"><span class="glyphicon glyphicon-wrench"></span> {{ 'navbar.edit.mashup' | trans }}</button>
+						<button ng-if="state.modified" type="button" class="btn btn-success navbar-btn" ng-click="save()"><span class="glyphicon glyphicon-save"></span> {{ 'navbar.edit.save' | trans }}</button>
+						<button ng-if="!state.edit" type="button" class="btn btn-default navbar-btn" ng-click="switchEdit()"><span class="glyphicon glyphicon-pencil"></span> {{ 'navbar.edit.edit' | trans }}</button>
+						<button ng-if="state.edit" type="button" class="btn btn-warning navbar-btn" ng-click="switchEdit()"><span class="glyphicon glyphicon-pencil"></span> {{ 'navbar.edit.done' | trans }}</button>
+					</div>
+				</li>
+			
+				<li class="dropdown" dropdown>	
+					<a
+						trans="trans.lang"
+						class="dropdown-toggle"
+						dropdown-toggle
+						data-toggle="dropdown"
+						role="button"
+						aria-expanded="false"
+					> <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li ng-repeat="lang in trans.langs"> 
+							<a trans="lang.name" ng-click="trans.lang = lang.title" ></a>
+						</li>
+					</ul>
+				</li>
+				
+				<li >
+					<a trans="state.user"></a>
+				</li>
+				
+			</ul>
+
+		</div>
+	</div>
+</nav>
+
+<div ng-show="state.ready" ng-if="store.hub.header.show" style="margin-top: 50px;"></div>
+<div ng-show="state.ready" ng-if="!store.hub.header.show" style="margin-top: 70px;"></div>
+
+<div ng-show="state.ready" ng-if="store.hub.header.show" style="padding: 10px 0px 10px 0px;" class="jumbotron" back-img="store.hub.header.logo.href" back-img-if="store.hub.header.logo.show">
+	<div class="container">
+		<h1 ng-class="{'inverted': store.hub.header.invert}" trans="store.hub.header.title"></h1>
+		<p ng-class="{'inverted': store.hub.header.invert}" trans="store.hub.header.description"></p>
+		
+		<p ng-if="store.hub.header.link.show"><a trans="store.hub.header.link.title" class="btn btn-primary btn-lg" href="{{ store.hub.header.link.href | trans }}" role="button"></a></p>
+	</div>
+</div>
+
+<div ng-show="state.ready" class="container marketing">
+
+	<div class="row sortable" ui-sortable="sortableOptions" ng-model="store.mashups">
+		<div class="col-xs-12 col-sm-3 col-lg-3 col-md-3" ng-repeat="mashup in store.mashups">
+		
+			<div class="panel panel-default hub-color-{{mashup.color}}" style="height: 100%; width: 100%;">
+				<div class="panel-heading" ng-if="state.edit">
+					<div class="container-fluid panel-container" style="padding-left:0px; padding-right:0px;">
+						<ul class="list-inline">
+							<li class="col-xs-12">
+								<span class="btn-group pull-right">
+									<i ng-if="state.edit" ng-disabled="state.multiselectMashup" class="btn btn-default glyphicon glyphicon-cog" ng-click="configMashup(this)"></i>
+									<i ng-if="state.edit" ng-disabled="state.multiselectMashup" class="dragHandle btn btn-default glyphicon glyphicon-move" style="cursor: move;"></i>
+									<i ng-if="state.edit" ng-disabled="state.multiselectMashup" class="btn btn-default glyphicon glyphicon-trash" ng-click="deleteMashup(this)"></i>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel-body" style="height: 100%" back-img="mashup.logo.href" back-img-if="mashup.logo.show" >
+						<a href="#/{{mashup.title}}/1" style="line-height: 160px;">
+							<h1
+								style="
+									display:inline-block;
+									vertical-align:middle;
+									margin: 0px;
+									background-color: transparent !important;
+								"
+								class="hub-color-{{mashup.color}} inverted"
+							>{{ mashup.name | trans }}{{ (mashup.published) ? ' (' : '' }}{{ (mashup.published) ? 'route.hub.body.publishedBy' : '' | trans }}{{ (mashup.published) ? ' ' + mashup.__modif_user + ')' : ''}}</h1>
+						</a>
+
+				</div>
+			</div>
+		</div>
+		<div ng-if="state.edit" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="panel panel-default" >
+				<div class="panel-body">
+					<button type="button" class="btn btn-default btn-lg" ng-click="addMashup()">
+						<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> {{ 'route.hub.body.newMashup' | trans }}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<p ng-if="store.hub.footer.right.show" class="qlik-out pull-right"><a class="qlik-out" trans="store.hub.footer.right.title" href="{{ store.hub.footer.right.href | trans }}"></a></p>
+		<p ng-if="store.hub.footer.left.show" class="qlik-out"><a class="qlik-out" trans="store.hub.footer.left.title" href="{{ store.hub.footer.left.href | trans }}"></a></p>
+	</footer>
+
+</div>
+

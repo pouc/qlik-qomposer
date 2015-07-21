@@ -1,0 +1,301 @@
+<div class="modal-header">
+	<h3 trans="title" class="modal-title"></h3>
+</div>
+<div class="modal-body">
+	
+	<script type="text/ng-template" id="nodes_renderer.html">
+		<div ui-tree-handle class="tree-node tree-node-content">
+			<a class="btn btn-success btn-xs" ng-if="item.items && item.items.length > 0" data-nodrag ng-click="toggle(this)">
+				<span
+					class="glyphicon"
+					ng-class="{
+						'glyphicon-chevron-right': collapsed,
+						'glyphicon-chevron-down': !collapsed
+					}"
+				>
+				</span>
+			</a>
+			{{item.type == 'sep' ? 'modal.config.accordion.navigation.sep' : (item.title.length == 0 ? 'modal.config.accordion.navigation.empty' : item.title) | trans}}
+			<span class="btn-group pull-right">
+				<i class="btn btn-primary btn-xs glyphicon glyphicon-plus" data-nodrag ng-click="newSubItem(this)"></i>
+				<i class="btn btn-danger btn-xs glyphicon glyphicon-remove" data-nodrag ng-click="remove(this)"></i>
+			</span>
+			<input class="col-xs-2 col-md-2 col-lg-2 pull-right" ng-model="item.page" type="text" placeholder="{{ 'modal.config.accordion.navigation.page' | trans }}" />
+			<input class="col-xs-2 col-md-2 col-lg-2 pull-right" trans="item.title" type="text" placeholder="{{ 'modal.config.accordion.navigation.title' | trans }}" />
+		</div>
+		<ol ui-tree-nodes="" ng-model="item.items" ng-class="{hidden: collapsed}">
+			<li ng-repeat="item in item.items" ui-tree-node ng-include="'nodes_renderer.html'">
+			</li>
+		</ol>
+	</script>
+	
+	<accordion close-others="true">
+	
+		<accordion-group ng-if="mashup" heading="{{ 'modal.config.accordion.general' | trans }}" is-open="firstOpen">
+			<form class="form-horizontal">
+				<div ng-if="inArray('general.name', hide) == -1" class="form-group">
+					<label trans="'modal.config.accordion.general.name'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<input
+							trans="mashup.name"
+							type="text"
+							class="form-control"
+							placeholder="{{ 'modal.config.accordion.general.name' | trans }}"
+						/>
+					</div>
+				</div>
+				<div ng-if="inArray('general.title', hide) == -1" class="form-group " ng-class="{'has-error': !mashup.title }">
+					<label trans="'modal.config.accordion.general.title'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<input
+							ng-model="mashup.title"
+							type="text"
+							class="form-control"
+							placeholder="{{ 'modal.config.accordion.general.title' | trans }}"
+						/>
+					</div>
+				</div>
+				<div ng-if="inArray('general.logo', hide) == -1" class="form-group">
+					<label trans="'modal.config.accordion.navigation.logo'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input ng-model="mashup.logo.show" type="checkbox" />
+							</span>
+							<div ng-if="mashup.logo.show" class="col-sm-7">
+								<div
+									ngf-drop
+									ngf-select
+									ngf-change="onFileSelect($files, $event, $rejectedFiles, mashup.logo)"
+									class="drop-box" 
+									ngf-drag-over-class="dragover"
+									ngf-multiple="false"
+									ngf-allow-dir="false"
+									ngf-accept="'image/*,application/pdf'"
+								>
+									{{ 'modal.config.accordion.navigation.logo' | trans }}
+								</div>
+							</div>
+							<div ng-if="mashup.logo.show" class="col-sm-3">
+								<img
+									ng-if="mashup.logo.show"
+									ng-src="{{ mashup.logo.href | logo }}"
+									class="image-box"
+								/> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-if="inArray('general.color', hide) == -1" class="form-group">
+					<label trans="'modal.config.accordion.general.color'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="col-sm-2" style="padding: 2px 2px 2px 2px;" ng-repeat="item in cache.tiles">
+						<button type="button" class="btn" style="width:100%;" ng-class="'hub-color-' + item"  ng-click="mashup.color = item">
+							{{item}} <span ng-if="mashup.color == item" class="glyphicon glyphicon-ok"></span>
+						</button>
+						</div>
+					</div>
+				</div>
+				<div ng-if="inArray('general.theme', hide) == -1" class="form-group">
+					<label trans="'modal.config.accordion.general.theme'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<select class="form-control" ng-model="mashup.theme" ng-options="theme as theme.bs for theme in cache.themes"></select>
+					</div>
+				</div>
+				<div ng-if="inArray('general.application', hide) == -1" class="form-group"  ng-class="{'has-error': !mashup.app }">
+					<label trans="'modal.config.accordion.general.application'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<select class="form-control" ng-model="mashup.app" ng-options="app.type for app in cache.apps"></select>
+					</div>
+				</div>
+			</form>
+		</accordion-group>
+
+		<accordion-group ng-if="mashup.navbar" heading="{{ 'modal.config.accordion.navigation' | trans }}">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label trans="'modal.config.accordion.navigation.invert'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input ng-model="mashup.navbar.invert" type="checkbox" />
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label trans="'modal.config.accordion.navigation.brand'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<input
+							trans="mashup.navbar.brand"
+							type="text"
+							class="form-control"
+							placeholder="{{ 'modal.config.accordion.navigation.brand' | trans }}"
+						/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label trans="'modal.config.accordion.navigation.logo'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input ng-model="mashup.navbar.logo.show" type="checkbox" />
+							</span>
+							<div ng-if="mashup.navbar.logo.show" class="col-sm-7">
+								<div
+									ngf-drop
+									ngf-select
+									ngf-change="onFileSelect($files, $event, $rejectedFiles, mashup.navbar.logo)"
+									class="drop-box" 
+									ngf-drag-over-class="dragover"
+									ngf-multiple="false"
+									ngf-allow-dir="false"
+									ngf-accept="'image/*,application/pdf'"
+								>
+									{{ 'modal.config.accordion.navigation.logo' | trans }}
+								</div>
+							</div>
+							<div ng-if="mashup.navbar.logo.show" class="col-sm-3">
+								<img
+									ng-if="mashup.navbar.logo.show"
+									ng-src="{{ mashup.navbar.logo.href | logo }}"
+									class="image-box"
+								/> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label trans="'modal.config.accordion.navigation.nav'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div ui-tree id="tree-root">
+							<ol ui-tree-nodes ng-model="mashup.navbar.left">
+								<li ng-repeat="item in mashup.navbar.left" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<button type="button" class="btn btn-default btn-lg" ng-click="addPage()">
+							<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> {{ 'modal.config.accordion.navigation.addPage' | trans }}
+						</button>
+					</div>
+				</div>
+			</form>
+		</accordion-group>
+
+		<accordion-group ng-if="config.header" heading="{{ 'modal.config.accordion.header' | trans }}">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label trans="'modal.config.accordion.header.header'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input ng-model="config.header.show" type="checkbox" />
+							</span>
+							<input ng-disabled="!config.header.show" trans="config.header.title" type="text" class="form-control" placeholder="{{ 'modal.config.accordion.header.header' | trans }}" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label trans="'modal.config.accordion.header.invert'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input ng-model="config.header.invert" type="checkbox" />
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label trans="'modal.config.accordion.header.logo'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input ng-model="config.header.logo.show" type="checkbox" />
+							</span>
+							<div ng-if="config.header.logo.show" class="col-sm-7">
+								<div
+									ngf-drop
+									ngf-select
+									ngf-change="onFileSelect($files, $event, $rejectedFiles, config.header.logo)"
+									class="drop-box" 
+									ngf-drag-over-class="dragover"
+									ngf-multiple="false"
+									ngf-allow-dir="false"
+									ngf-accept="'image/*,application/pdf'"
+								>
+									{{ 'modal.config.accordion.header.logo' | trans }}
+								</div>
+							</div>
+							<div ng-if="config.header.logo.show" class="col-sm-3">
+								<img
+									ng-if="config.header.logo.show"
+									ng-src="{{ config.header.logo.href | logo }}"
+									class="image-box"
+								/> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-if="config.header.show" class="form-group">
+					<label trans="'modal.config.accordion.header.description'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<textarea trans="config.header.description" rows="5" type="text" class="form-control" placeholder="{{ 'modal.config.accordion.header.description' | trans }}">
+						</textarea>
+					</div>
+				</div>
+				<div ng-if="config.header.show" class="form-group">
+					<label trans="'modal.config.accordion.header.link'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input ng-model="config.header.link.show" type="checkbox"">
+							</span>
+							<input ng-disabled="!config.header.link.show" trans="config.header.link.title" type="text" class="form-control" placeholder="{{ 'modal.config.accordion.header.link' | trans }}" />
+							<input ng-disabled="!config.header.link.show" trans="config.header.link.href" type="text" class="form-control" placeholder="{{ 'modal.config.accordion.header.link.href' | trans }}" />
+							
+						</div>
+					</div>
+				</div>
+			</form>
+			
+		</accordion-group>
+
+		<accordion-group ng-if="mashup" heading="{{ 'modal.config.accordion.footer' | trans }}">
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label trans="'modal.config.accordion.footer.left'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input ng-model="mashup.footer.left.show" type="checkbox" />
+							</span>
+							<input ng-disabled="!mashup.footer.left.show" trans="mashup.footer.left.title" type="text" class="form-control" placeholder="{{ 'modal.config.accordion.footer.left' | trans }}">
+							<input ng-disabled="!mashup.footer.left.show" trans="mashup.footer.left.href" type="text" class="form-control" placeholder="{{ 'modal.config.accordion.footer.left' | trans }}">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label trans="'modal.config.accordion.footer.right'" class="col-sm-2 control-label"></label>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<input ng-model="mashup.footer.right.show" type="checkbox" />
+							</span>
+							<input ng-disabled="!mashup.footer.right.show" trans="mashup.footer.right.title" type="text" class="form-control" placeholder="{{ 'modal.config.accordion.footer.right' | trans }}">
+							<input ng-disabled="!mashup.footer.right.show" trans="mashup.footer.right.href" type="text" class="form-control" placeholder="{{ 'modal.config.accordion.footer.right' | trans }}">
+						</div>
+					</div>
+				</div>
+			</form>
+		</accordion-group>
+	</accordion>
+
+</div>
+<div class="modal-footer">
+	<button trans="'modal.ok'" class="btn btn-primary" ng-click="ok()" ng-disabled="!isOk()"></button>
+	<button trans="'modal.cancel'" class="btn btn-warning" ng-click="cancel()"></button>
+</div>

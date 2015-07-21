@@ -1,0 +1,173 @@
+<nav ng-show="state.ready" class="qlik-out navbar navbar-fixed-top" ng-class="{'navbar-default': !state.mashup.navbar.invert, 'navbar-inverse': state.mashup.navbar.invert,  }" ng-controller="NavCtrl">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+				<span trans="'navbar.toggle'" class="sr-only"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a ng-if="state.mashup.navbar.logo.show" style="padding:0px;" href="#/mashups" class="navbar-brand">
+				<img style="height:100%;" ng-src="{{ state.mashup.navbar.logo.href | logo }}" />
+			</a>
+			<a trans="state.mashup.navbar.brand" href="#/mashups" class="navbar-brand"></a>
+		</div>
+
+		<div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+			<ul ng-if="!state.edit && !state.max" class="nav navbar-nav">
+				<li ng-repeat-start="navItem in state.mashup.navbar.left" ng-if="false" ></li>
+				
+				<li ng-if="navItem.items.length == 0" ng-class="{active: navItem.page == state.route.pageId}">
+					<a trans="navItem.title" href="#/{{state.route.mashupId}}/{{ navItem.page }}"></a>
+				</li>
+				
+				<li ng-if="navItem.items.length > 0" class="dropdown" dropdown ng-class="{active: selected(navItem) }">	
+					<a trans="navItem.title" href="#" class="dropdown-toggle " dropdown-toggle data-toggle="dropdown" role="button" aria-expanded="false" > <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li ng-repeat="navSubItem in navItem.items" ng-class="{'divider': navSubItem.type == 'sep', active: navSubItem.page == state.route.pageId}">
+							<a trans="navSubItem.title" href="#/{{state.route.mashupId}}/{{ navSubItem.page }}" ng-if="navSubItem.type == 'link'"></a>
+						</li>
+					</ul>
+				</li>
+				
+				<li ng-repeat-end ng-if="false"></li>
+			</ul>
+
+
+			<ul class="nav navbar-nav navbar-right" >
+				<li style="padding-right: 15px;">
+					<div class="btn-group">
+						<button ng-if="state.edit && state.multiselect" type="button" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span></button>
+						<button ng-if="state.edit && state.multiselect" type="button" class="btn btn-default navbar-btn" ng-click="clearPanels()"><span class="glyphicon glyphicon-minus-sign"></span> {{ 'navbar.multiple.clear' | trans }}</button>
+						<button ng-if="state.edit && state.multiselect" type="button" class="btn btn-default navbar-btn" ng-click="configPanels()"><span class="glyphicon glyphicon-cog"></span> {{ 'navbar.multiple.configure' | trans }}</button>
+						<button ng-if="state.edit && state.multiselect" type="button" class="btn btn-default navbar-btn" ng-click="removePanels()"><span class="glyphicon glyphicon-trash"></span> {{ 'navbar.multiple.delete' | trans }}</button>
+					</div>
+				</li>
+				<li style="padding-right: 15px;">
+					<div class="btn-group">
+						<button ng-if="state.max" type="button" class="btn btn-default navbar-btn" ng-click="exportPanel()"><span class="glyphicon glyphicon-share"></span> {{ 'navbar.edit.share' | trans }}</button>
+						<button ng-if="state.max" type="button" class="btn btn-default navbar-btn" ng-click="mailPanel()"><span class="glyphicon glyphicon-envelope"></span> {{ 'navbar.edit.mail' | trans }}</button>
+						<button ng-if="state.max" type="button" class="btn btn-default navbar-btn" ng-click="state.max = false"><span class="glyphicon glyphicon-resize-small"></span> {{ 'navbar.edit.min' | trans }}</button>
+					</div>
+					
+					<div class="btn-group">
+						<button ng-if="state.edit && !state.mashup.published" type="button" class="btn btn-default navbar-btn" ng-click="publish()" ng-class="{'btn-warning': state.mashup.publishedByMe}"><span class="glyphicon glyphicon-cloud-upload"></span> {{ 'navbar.edit.publish' | trans }}</button>
+						<button ng-if="state.edit && !state.mashup.published && state.mashup.publishedByMe" type="button" class="btn btn-default navbar-btn" ng-click="unpublish()"><span class="glyphicon glyphicon-remove"></span> {{ 'navbar.edit.unpublish' | trans }}</button>
+					</div>
+					
+					<div class="btn-group">
+						<button ng-if="state.edit" type="button" class="btn btn-default navbar-btn" ng-click="configPage()"><span class="glyphicon glyphicon-wrench"></span> {{ 'navbar.edit.page' | trans }}</button>
+						<button ng-if="state.edit" type="button" class="btn btn-default navbar-btn" ng-class="{'btn-warning': state.editApp}" ng-click="switchEditApp()"><span class="glyphicon glyphicon-th"></span> {{ 'navbar.edit.app' | trans }}</button>
+						<button ng-if="state.modified" type="button" class="btn btn-success navbar-btn" ng-click="save()"><span class="glyphicon glyphicon-save"></span> {{ 'navbar.edit.save' | trans }}</button>
+						<button ng-if="!state.edit" type="button" class="btn btn-default navbar-btn" ng-click="switchEdit()"><span class="glyphicon glyphicon-pencil"></span> {{ 'navbar.edit.edit' | trans }}</button>
+						<button ng-if="state.edit" type="button" class="btn btn-warning navbar-btn" ng-click="switchEdit()"><span class="glyphicon glyphicon-pencil"></span> {{ 'navbar.edit.done' | trans }}</button>
+
+					</div>
+				</li>
+
+
+				<li class="dropdown" dropdown>	
+					<a trans="trans.lang" href="" class="dropdown-toggle " dropdown-toggle data-toggle="dropdown" role="button" aria-expanded="false" > <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li ng-repeat="lang in trans.langs"> 
+							<a trans="lang.name" ng-click="trans.lang = lang.title" ></a>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<a trans="state.user" href=""></a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+	<div ng-if="!state.editApp" style="width: 100%;" current-selections="state.app"></div>
+</nav>
+
+
+
+<div ng-show="state.ready" ng-if="state.page.header.show" style="margin-top: 70px;"></div>
+<div ng-show="state.ready" ng-if="!state.page.header.show" style="margin-top: 90px;"></div>
+
+<div ng-show="state.ready" ng-if="state.max" class="row" style="border: 0; margin: 0; position:absolute; top:130px; left:0; right:0; bottom:0; width:100%; height: calc(100% - 130px)">
+	<div id="max" class="col-sm-12" style="height:100%;" qv-placeholder="maxItem.id" ></div>
+	<div id="comment" class="col-sm-8 col-md-6 col-lg-4" style="position: fixed; bottom: 0; right: 0;" >
+		<irontec-simple-chat
+			messages="messages"
+			username="state.user"
+			input-placeholder-text="{{ 'chat.write' | trans }}"
+			submit-button-text="{{ 'chat.send' | trans }}"
+			title="{{ 'chat.title' | trans }}"
+			theme="material"
+			submit-function="sendMessage"
+			snapshot-function="snapshot"
+			reconnect-function="reconnectSocket"
+			connected="socketConnected"
+		>
+		</irontec-simple-chat>
+	</div>
+</div>
+
+<iframe ng-show="state.ready" ng-if="!state.max && state.editApp" ng-src="{{getIframeSrc()}}" style="border: 0; position:absolute; top:50px; left:0; right:0; bottom:0; width:100%; height: calc(100% - 50px)" />
+
+<div ng-show="state.ready" ng-if="!state.max && !state.editApp && state.page.header.show" class="jumbotron" ng-if="state.page.header.show" style="padding: 10px 0px 10px 0px;" back-img="state.page.header.logo.href" back-img-if="state.page.header.logo.show" >
+	<div class="container">
+		<h1 ng-class="{'inverted': state.page.header.invert}" trans="state.page.header.title"></h1>
+		<p ng-class="{'inverted': state.page.header.invert}" trans="state.page.header.description"></p>
+		
+		<p ng-if="state.page.header.link.show"><a trans="state.page.header.link.title" href="{{ state.page.header.link.href }}" target="_blank" class="btn btn-primary btn-lg" role="button"></a></p>
+	</div>
+</div>
+
+<div ng-show="state.ready" ng-if="!state.max && !state.editApp" class="container marketing">
+
+	<div class="row sortable" ui-sortable="sortableOptions" ng-model="row" ng-repeat="row in state.page.rows">
+		<div class="col-xs-12 col-sm-{{item.width}} col-lg-{{item.width}} col-md-{{item.width}}" ng-repeat="item in row">
+			<div class="panel panel-{{item.color}}" style="height: 100%;">
+				<div class="panel-heading" ng-if="item.showTitle || state.edit">
+					<div class="container-fluid panel-container" style="padding-left:0px; padding-right:0px;">
+						<ul class="list-inline">
+							<li class="col-xs-12">
+								<span class="btn-group pull-right">
+									<i ng-if="state.edit" class="btn btn-default glyphicon glyphicon-plus-sign" ng-class="{'btn-primary': selected}" ng-click="selectPanel(this)"></i>
+									<i ng-if="state.edit" ng-disabled="state.multiselect" class="btn btn-default glyphicon glyphicon-cog" ng-click="configPanel($index)"></i>
+									<i ng-if="state.edit" ng-disabled="state.multiselect" class="dragHandle btn btn-default glyphicon glyphicon-move" style="cursor: move;"></i>
+									<i ng-if="state.edit" ng-disabled="state.multiselect" class="btn btn-default glyphicon glyphicon-trash" ng-click="deletePanel($index)"></i>
+									<i ng-if="!state.edit" class="btn btn-default glyphicon glyphicon-resize-full" ng-click="maxPanel(this)"></i>
+									<i ng-if="!state.edit && item.showLink" class="btn btn-default glyphicon glyphicon-link" ng-click="linkPanel(this, $event)"></i>
+								</span>
+								
+								<h4><span ng-if="item.showIcon" class="glyphicon glyphicon-{{item.icon}}"></span> {{item.title | trans}}</h4>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div style="position: relative;" class="panel-body" style="height: 100%;" >
+					<div
+						class="qlik-out"
+						ng-if="!(item.showTitle || state.edit) && item.showLink"
+						ng-click="!item.showLink || linkPanel(this, $event)"
+						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #f00; opacity: 0; z-index: 999"
+					></div>
+					<div style="width: 100%; height: {{item.max ? '100%' : item.height + 'px'}};" class="qvtarget qvplaceholder" qv-placeholder="item.id"></div>
+				</div>
+			</div>
+		</div>
+		<div ng-if="state.edit" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="panel panel-default" >
+				<div class="panel-body">
+					<button trans="'route.main.body.newPanel'" type="button" class="btn btn-default btn-lg" ng-click="addPanel()"> <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<p ng-if="state.mashup.footer.right.show" class="pull-right"><a trans="state.mashup.footer.right.title" href="{{ state.mashup.footer.right.href | trans }}"></a></p>
+		<p ng-if="state.mashup.footer.left.show"><a trans="state.mashup.footer.left.title" href="{{ state.mashup.footer.left.href | trans }}"></a></p>
+	</footer>
+
+</div>
+

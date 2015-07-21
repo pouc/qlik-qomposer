@@ -1,0 +1,394 @@
+﻿{
+	"_themeName": "Qlikview High Visibility",
+	"_owner": "Tobias Åström (tsm)",
+	"backgroundColor": "#333",
+	"fontFamily": "QlikView Sans",
+	"fontSize": "15px",
+	"fontWeight": "normal",
+	"color": "#eee",
+	"axis": {
+		"title": {
+			"fontSize": {
+				"default": "15px",
+				"xsmall": "15px",
+				"small": "15px",
+				"medium": "15px",
+				"full": "18px"
+			},
+			"color": {
+				"default": "#eee",
+				"active": "#eee",
+				"inactive": "#999",
+				"locked": "#6abbdd",
+				"disabled": "#999"
+			}
+		},
+		"label": {
+			"fontSize": {
+				"default": "12px",
+				"xsmall": "11px",
+				"small": "12px",
+				"medium": "14px",
+				"full": "16px"
+			},
+			"discrete": {
+				"fontSize": {
+					"default": "12px",
+					"xsmall": "11px",
+					"small": "12px",
+					"medium": "14px",
+					"full": "16px"
+				}
+			},
+			"margin": 4
+		},
+		"tick": {
+			"color": "#FCFCB1",
+			"length": 8
+		},
+		"line": {
+			"color": "#FCFDC4"
+		},
+		"grid": {
+			"major": {
+				"color":"#FCFDC4",
+				"width": 1
+			},
+			"minor": {
+				"color":"#FEFEE6",
+				"width": 1
+			},
+			"zero": {
+				"color":"#F7F73B",
+				"width": 1
+			}
+		}
+	},
+	"legend": {
+		"title": {
+			"color": "#fff",
+			"fontSize": "12px"
+		},
+		"label": {
+			"color": "#eee",
+			"fontSize": "14px"
+		}
+	},
+	"item": {
+		"name": {
+			"color": "#aaa",
+			"fontFamily": "QlikView Sans",
+			"fontSize": "15px",
+			"fontWeight": "normal"
+		},
+		"value": {
+			"color": "#aaa",
+			"fontFamily": "QlikView Sans",
+			"fontSize": "14px"
+		}
+	},
+	"gauge": {
+		"value": {
+			"color": "#eee",
+			"fontSize": "42px",
+			"fontWeight": "bold",
+			"minFontSize": 25,
+			"maxFontSize": 72
+		},
+		"area": {
+			"color": "#eeeeee"
+		},
+		"pointer": {
+			"color": "#eeeeee"
+		}
+	},
+	"treemap": {
+		"branch": {
+			"fill": "rgba(255,255,255,0.05)",
+			"label": {
+				"color": "rgba(222,222,222,1)",
+				"fontSize": "16px",
+				"fontWeight": "bold"
+			}
+		},
+		"leaf": {
+			"border": {
+				"width": {
+					"default": 2,
+					"selected": 3
+				},
+				"color": {
+					"default": "#222",
+					"selected": "#eee"
+				}
+			},
+			"label": {
+				"fontSize": "14px",
+				"fontWeight": "bold",
+				"color": {
+					"default": "#666",
+					"light": "#eee",
+					"dark": "#666"
+				}
+			}
+		},
+		"overlay": {
+			"label": {
+				"color": {
+					"default": "rgba(33,33,33,0.4)",
+					"light": "rgba(222,222,222,0.4)",
+					"dark": "rgba(33,33,33,0.4)"
+				},
+				"fontWeight": "bold"
+			}
+		}
+	},
+	"scatterPlot": {
+		"value": {
+			"color": "#eee",
+			"fontSize": "12px",
+			"background": "rgba(51,51,51,0.9)"
+		},
+		"shape": {
+			"border": {
+				"width": {
+					"default": 1,
+					"selected": 2
+				},
+				"color": "rgba(238,238,238,0.7)"
+			},
+			"outOfBounds": {
+				"opacity": 0.3
+			}
+		},
+		"line": {
+			"color": "#999",
+			"width": 1
+		}
+	},
+	"barChart": {
+		"shape": {
+			"border": {
+				"color": {
+					"default": "rgba(0,0,0,0.25)",
+					"selected": "#eee"
+				},
+				"width": {
+					"default": 0,
+					"selected": 3
+				}
+			}
+		},
+		"value": {
+			"color": {
+				"default": "#666",
+				"dark": "#666",
+				"light": "#eee"
+			},
+			"fontSize": {
+				"default": "14px",
+				"full": "14px",
+				"medium": "14px",
+				"small": "14px",
+				"xsmall": "14px",
+				"spark": "14px"
+			}
+		}
+	},
+	"lineChart": {
+		"fontSize": "13px",
+		"color": "#aaa",
+		"item": {
+			"value": {
+				"color": {
+					"default": "#eee",
+					"dark": "#666",
+					"light": "#eee"
+				},
+				"fontSize": {
+					"default": "12px",
+					"full": "16px",
+					"medium": "14px",
+					"small": "12px",
+					"xsmall": "10px",
+					"spark": "10px"
+				}
+			},
+			"shape": {
+				"size": {
+					"default": 10,
+					"selected": 14
+				}
+			},
+			"line": {
+				"width": {
+					"default": 2,
+					"full": 3,
+					"medium": 2,
+					"small": 2,
+					"xsmall": 1,
+					"spark": 1
+				}
+			},
+			"outOfRange": {
+				"color": "#999999"
+			}
+		}
+	},
+	"pieChart": {
+		"color": "#aaa",
+		"axis": {
+			"title": {
+				"fontSize": "16px",
+				"color": {
+					"default": "#333",
+					"active": "#333",
+					"inactive": "#999"
+				}
+			},
+			"label": {
+				"fontSize": "14px"
+			}
+		},
+		"item": {
+			"name": {
+				"fontWeight": "bold",
+				"fontSize": {
+					"default": "15px",
+					"large": "18px",
+					"medium": "16px",
+					"small": "14px",
+					"tiny": "12px"
+				},
+				"color": {
+					"default": "#aaa",
+					"dark": "#333",
+					"light": "#eee"
+				}
+			},
+			"value": {
+				"color": {
+					"default": "#666",
+					"dark": "#333",
+					"light": "#eee"
+				},
+				"fontSize": {
+					"default": "14px",
+					"large": "16px",
+					"medium": "14px",
+					"small": "12px",
+					"tiny": "11px"
+				}
+			},
+			"shape": {
+				"border": {
+					"width": {
+						"default": 1,
+						"selected": 2
+					 }
+				}
+			},
+			"line": {
+				"width": 1,
+				"color": "#aaa"
+			}
+		}
+	},
+	"palette": 
+	[
+		"#ff0000",
+		"#ff7400",
+		"#ffaa00",
+		"#ffd300",
+		"#ffff00",
+		"#aaff00",
+		"#00ff00",
+		"#00ffff",
+		"#0551ff",
+		"#4207ff",
+		"#a603ff",
+		"#ff0090",
+		"#eeeeee",
+		"#888888",
+		"#222222"
+	],
+	"colorSchemes": {
+		"primaryColor": "#e41a1c",
+		"othersColor": "#c5c5c5",
+		"nullColor": "#e2e2e2",
+		"qualitativeScales": [
+			{
+				"name": "8 Colors",
+				"type": "pyramid",
+				"scale": [
+					["#e41a1c"],
+					["#e41a1c", "#377eb8"],
+					["#e41a1c", "#377eb8", "#4daf4a"],
+					["#e41a1c", "#377eb8", "#4daf4a", "#984ea3"],
+					["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00"],
+					["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33"],
+					["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628"],
+					["#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00", "#ffff33", "#a65628", "#f781bf"]
+				]
+			},
+			{
+				"name": "99 Colors",
+				"type": "row",
+				"scale": ["#99c867", "#e43cd0", "#e2402a", "#66a8db", "#3f1a20", "#e5aa87", "#3c6b59", "#aa2a6b", "#e9b02e", "#7864dd", "#65e93c", "#5ce4ba", "#d0e0da", "#d796dd",
+						"#64487b", "#e4e72b", "#6f7330", "#932834", "#ae6c7d", "#986717", "#e3cb70", "#408c1d", "#dd325f", "#533d1c", "#2a3c54", "#db7127", "#72e3e2", "#e2c1da",
+						"#d47555", "#7d7f81", "#54ae9b", "#e9daa6", "#3a8855", "#5be66e", "#ab39a4", "#a6e332", "#6c469d", "#e39e51", "#4f1c42", "#273c1c", "#aa972e", "#8bb32a",
+						"#bdeca5", "#63ec9b", "#9c3519", "#aaa484", "#72256d", "#4d749f", "#9884df", "#e590b8", "#44b62b", "#ad5792", "#c65dea", "#e670ca", "#e38783", "#29312d",
+						"#6a2c1e", "#d7b1aa", "#b1e7c3", "#cdc134", "#9ee764", "#56b8ce", "#2c6323", "#65464a", "#b1cfea", "#3c7481", "#3a4e96", "#6493e1", "#db5656", "#747259",
+						"#bbabe4", "#e33f92", "#d0607d", "#759f79", "#9d6b5e", "#8574ae", "#7e304c", "#ad8fac", "#4b77de", "#647e17", "#b9c379", "#8da8b0", "#b972d9", "#786279",
+						"#7ec07d", "#916436", "#2d274f", "#dce680", "#759748", "#dae65a", "#459c49", "#b7934a", "#51c671", "#9ead3f", "#969a5c", "#b9976a", "#46531a", "#c0f084",
+						"#76c146"
+				]
+			}
+		],
+		"ordinalScales": [
+			{
+				"name": "Sequential Gradient",
+				"translation": "properties.colorScheme.sequential",
+				"type": "gradient",
+				"scale": ["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c","#cb181d","#99000d"]
+			},
+			{
+				"name": "Sequential Classes",
+				"translation": "properties.colorScheme.sequentialC",
+				"type": "class-pyramid",
+				"scale": [
+					null,
+					["#9ecae1"],
+					["#3182bd", "#deebf7"],
+					["#3182bd", "#9ecae1", "#deebf7"],
+					["#2171b5", "#6baed6", "#bdd7e7", "#eff3ff"],
+					["#08519c", "#3182bd", "#6baed6", "#bdd7e7", "#eff3ff"],
+					["#08519c", "#3182bd", "#6baed6", "#9ecae1", "#c6dbef", "#eff3ff"],
+					["#084594", "#2171b5", "#4292c6", "#6baed6", "#9ecae1", "#c6dbef", "#eff3ff"]
+				]
+			},
+			{
+				"name": "Diverging gradient",
+				"translation": "properties.colorScheme.diverging",
+				"type": "gradient",
+				"scale": ["#8c510a", "#bf812d", "#dfc27d", "#f6e8c3", "#c7eae5", "#80cdc1", "#35978f", "#01665e" ]
+			},
+			{
+				"name": "Diverging Classes",
+				"translation": "properties.colorScheme.divergingC",
+				"type": "class-pyramid",
+				"scale": [
+					null,
+					["#f5f5f5"],
+					["#d8b365", "#5ab4ac"],
+					["#d8b365", "#f5f5f5", "#5ab4ac"],
+					["#a6611a", "#dfc27d", "#80cdc1", "#018571"],
+					["#a6611a", "#dfc27d", "#f5f5f5", "#80cdc1", "#018571"],
+					["#8c510a", "#d8b365", "#f6e8c3", "#c7eae5", "#5ab4ac", "#01665e"],
+					["#8c510a", "#d8b365", "#f6e8c3", "#f5f5f5", "#c7eae5","#5ab4ac", "#01665e"],
+					["#8c510a", "#bf812d", "#dfc27d", "#f6e8c3", "#c7eae5", "#80cdc1", "#35978f", "#01665e"]
+				]
+			}
+		]
+	}
+}
