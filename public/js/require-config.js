@@ -14,8 +14,7 @@ var extBowerRoot =		root + 'bower_components'
 var config;
 
 if(typeof require == 'undefined') {
-	alert('Require is not loaded! Is Qlik Sense available?')
-	//window.location.replace("/login");
+	window.location.replace("/login");
 }
 else {
 	
