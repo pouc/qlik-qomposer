@@ -238,6 +238,7 @@ define([
 			edit: false,
 			ready: false,
 			multiselect: false,
+			desktop: undefined,
 			selected: [],
 			modified: false,
 			route: $routeParams,
@@ -378,7 +379,10 @@ define([
 						
 						
 						themeService.set(state.mashup.theme).then(function() {
-							state.app = qlik.openApp(state.mashup.app.id, config);
+							var cachedApp = cache.apps.filter(function(item) {
+								return item.id == state.mashup.app.id;
+							})
+							state.app = qlik.openApp(cachedApp[0].fullId, config);
 							retDef.resolve();
 						})
 							
@@ -484,8 +488,10 @@ define([
 		var repoLoaded = global.isPersonalMode().then(function (reply) {
 			
 			if(reply.qReturn) {
+				state.desktop = true;
 				return { qReturn: { UserId: 'Desktop' } };
 			} else {
+				state.desktop = false;
 				var authDef = $q.defer();
 				global.getAuthenticatedUser(function(reply) {
 					var result = {};
@@ -570,7 +576,8 @@ define([
 		qlik.getAppList(function(b) {
 			b.forEach(function(a) {
 				cache.apps.push({
-					id: a.qDocId,
+					id: (state.desktop ? a.qDocId.replace(/^C:\\Users\\([^\\])*\\Documents\\Qlik\\Sense\\Apps\\/, '') : a.qDocId),
+					fullId: a.qDocId,
 					type: a.qDocName
 				})
 			});
