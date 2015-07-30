@@ -4,6 +4,8 @@ A drag&drop mashup editor for Qlik Sense
 
 # Instructions
 
+## Desktop
+
 - Download the zip file & unzip anywhere or clone in desktop (from github)
 - start your Qlik Sense dekstop
 - launch start.bat
