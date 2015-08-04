@@ -16,7 +16,7 @@ A drag&drop mashup editor for Qlik Sense
 
 - Download the zip file & unzip anywhere or clone in desktop (from github)
 - Edit the config.js file to connect to your server (you can take the second commented block as an example)
-- Deploy the bounce mashup in Qlik Sense Server to have a smooth authentication process
+- Deploy the [bounce](http://branch.qlik.com/projects/showthread.php?582-bounce-after-authentication) mashup in Qlik Sense Server to have a smooth authentication process
 - install nodeJS & launch start.bat
 - open a web brower and connect to http(s)://yourserver:port
 - enjoy
